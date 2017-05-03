@@ -10,6 +10,7 @@ const db = require('./models');
 const app = express();
 const router = require('./routes/index.js')
 const env    = process.env.NODE_ENV || 'development';
+app.set('port', (process.env.PORT || 5432));
 const config = require('./config/config.json')[env];
 
 app.use(bodyparser.urlencoded({ extended: false }));
@@ -46,6 +47,6 @@ console.log('USER ======>>>>>>', req.user);
 
 
 
-app.listen(8080, function() {
-  console.log('server started on port 8080')
+app.listen(app.get('port'), function() {
+  console.log('server started on port', app.get('port'))
 });
