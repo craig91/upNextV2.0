@@ -10,14 +10,14 @@
     "username": "fxyjrfsfbacgmq",
     "password": "e94d5fb003070e5d576a468569cedb4c0a0b5eba7b10d57d5393eab7c643d032",
     "database": "dbpjfpp41fret0",
-    "host": "Database",
+    "host": "ec2-23-23-220-163.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "production": {
     "username": "fxyjrfsfbacgmq",
     "password": "e94d5fb003070e5d576a468569cedb4c0a0b5eba7b10d57d5393eab7c643d032",
     "database": "dbpjfpp41fret0",
-    "host": "",
+    "host": "ec2-23-23-220-163.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
