@@ -10,7 +10,7 @@ const db = require('./models');
 const app = express();
 const router = require('./routes/index.js')
 const env    = process.env.NODE_ENV || 'development';
-app.set('port', (process.env.PORT || 5432));
+app.set('port', (process.env.PORT || 5000));
 const config = require('./config/config.json')[env];
 
 app.use(bodyparser.urlencoded({ extended: false }));
