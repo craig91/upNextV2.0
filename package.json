@@ -7,7 +7,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "postinstall": "psql -h ec2-23-23-220-163.compute-1.amazonaws.com -p 5432 PGPASSWORD=e94d5fb003070e5d576a468569cedb4c0a0b5eba7b10d57d5393eab7c643d032 -U fxyjrfsfbacgmq upNext2 < node_modules/connect-pg-simple/table.sql",
+    "postinstall": " PGPASSWORD=e94d5fb003070e5d576a468569cedb4c0a0b5eba7b10d57d5393eab7c643d032 psql -h ec2-23-23-220-163.compute-1.amazonaws.com -p 5432  -U fxyjrfsfbacgmq -d dbpjfpp41fret0 < node_modules/connect-pg-simple/table.sql",
     "start": "webpack --watch & nodemon server.js",
     "seed": "node ./seed/user_seed.js && node ./seed/projects_seed.js",
     "test": "mocha --watch"
