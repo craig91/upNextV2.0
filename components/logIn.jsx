@@ -1,5 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
+import {Link} from 'react-router';
+
 
 const LoginPage = React.createClass({
   getInitialState() {
@@ -26,24 +28,35 @@ const LoginPage = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <h1>Log In</h1>
-        <form onSubmit={this.handleSubmit}>
+    <div>
+      <div className="header-container">
+        <div className="header">
+          <h1>upNext</h1>
+          <span>Inspired by creators</span>
+        </div>
+      </div>
 
-          <span>email</span>
-          <input type="text" placeholder="enter your email" ref={(input) => {
+
+      <div className="login-container">
+
+        <div class="thumbnail"><img src="../public/images/page-1@2x.png"/></div>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+
+          <input type="text" placeholder="email" ref={(input) => {
             this.email = input;
           }} required/>
 
-          <span>Password</span>
-          <input type="password" ref={(input) => {
+
+          <input type="password" placeholder="password" ref={(input) => {
             this.password = input;
           }} required/>
 
-          <input type="submit" />
+          <button type="submit">Login</button>
 
+          <p class="message">Not registered? <Link to="/signUp">Create an account</Link></p>
         </form>
       </div>
+    </div>
     )
   }
 })

@@ -36,51 +36,58 @@ const CreateUser = React.createClass({
   render: function() {
     return (
     <div>
+      <div className="header-container">
+        <div className="header">
+          <h1>upNext</h1>
+          <span>Inspired by creators</span>
+        </div>
+      </div>
 
-        <div>
-            <div>
-              <form onSubmit={this.handleSubmit}>
+        <div className="login-container">
+            <div class="thumbnail"><img src="../public/images/page-1@2x.png"/></div>
+              <form className="login-form" onSubmit={this.handleSubmit}>
 
-                   <span>First Name</span>
-                   <input type="text" ref={(input) => {
+
+                   <input type="text" placeholder="First Name" ref={(input) => {
                        this.firstName = input;
                    }} required/>
-                   <span>Last Name</span>
-                   <input type="text" ref={(input) => {
+
+                   <input type="text" placeholder="Last Name" ref={(input) => {
                        this.lastName = input;
                    }} required/>
-                   <span>Bio</span>
-                   <input type="text" ref={(input) => {
+
+                   <input type="text" placeholder="Short Bio" ref={(input) => {
                        this.bio = input;
-                   }} required/>
-                   <span>Your email</span>
-                   <input type="text" ref={(input) => {
+                   }}/>
+
+                   <input type="text" placeholder="email" ref={(input) => {
                        this.email = input;
                    }} required/>
-                   <span>Location</span>
-                   <input type="text" ref={(input) => {
+
+                   <input type="text" placeholder="location" ref={(input) => {
                        this.location = input;
-                   }} required/>
-                   <span>Postition</span>
-                   <input type="text" ref={(input) => {
+                   }}/>
+
+                   <input type="text" placeholder="Position" ref={(input) => {
                        this.position = input;
-                   }} required/>
-                   <span>LinkedIn</span>
-                   <input type="text" required ref={(input) => {
+                   }}/>
+
+                   <input type="text" placeholder="LinkedIn Url" required ref={(input) => {
                        this.linkedin = input;
-                   }} required/>
-                   <span>Image url</span>
-                   <input type="text" required ref={(input) => {
+                   }}/>
+
+                   <input type="text" placeholder="Profile photo url" required ref={(input) => {
                        this.imageUrl = input;
-                   }} required/>
-                   <span>Password</span>
-                   <input type="password" required ref={(input) => {
+                   }}/>
+
+                   <input type="password" placeholder="password" required ref={(input) => {
                        this.password = input;
                    }} required/>
                     <button type="submit">Sign Up</button>
+
+                      <p class="message">Registered? <Link to="/login">Login to your account</Link></p>
                    </form>
                </div>
-           </div>
        </div>
     )
   }
