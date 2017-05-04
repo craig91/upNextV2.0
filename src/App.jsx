@@ -16,11 +16,11 @@ import ProjectPage from '../components/project_page.jsx';
 
 
 // import '../css/reset.css';
-import '../css/Nav_styles.css';
-import '../css/Profile_page_styles.css';
-import '../css/project-styles.css';
-import '../css/home-page-styles.css';
-import '../css/Project-page-styles.css';
+// import '../css/Nav_styles.css';
+// import '../css/Profile_page_styles.css';
+// import '../css/project-styles.css';
+// import '../css/home-page-styles.css';
+// import '../css/Project-page-styles.css';
 
 
 
