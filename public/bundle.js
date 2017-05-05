@@ -68,23 +68,23 @@
 	
 	var _profile_page2 = _interopRequireDefault(_profile_page);
 	
-	var _home_page = __webpack_require__(269);
+	var _home_page = __webpack_require__(270);
 	
 	var _home_page2 = _interopRequireDefault(_home_page);
 	
-	var _signUp = __webpack_require__(270);
+	var _signUp = __webpack_require__(271);
 	
 	var _signUp2 = _interopRequireDefault(_signUp);
 	
-	var _project_upload = __webpack_require__(266);
+	var _project_upload = __webpack_require__(267);
 	
 	var _project_upload2 = _interopRequireDefault(_project_upload);
 	
-	var _allProjects = __webpack_require__(267);
+	var _allProjects = __webpack_require__(268);
 	
 	var _allProjects2 = _interopRequireDefault(_allProjects);
 	
-	var _logout = __webpack_require__(268);
+	var _logout = __webpack_require__(269);
 	
 	var _logout2 = _interopRequireDefault(_logout);
 	
@@ -96,18 +96,21 @@
 	
 	var _project_page2 = _interopRequireDefault(_project_page);
 	
-	__webpack_require__(271);
+	__webpack_require__(272);
 	
-	__webpack_require__(275);
+	__webpack_require__(276);
 	
-	__webpack_require__(277);
+	__webpack_require__(278);
 	
-	__webpack_require__(279);
+	__webpack_require__(280);
 	
-	__webpack_require__(283);
+	__webpack_require__(284);
+	
+	__webpack_require__(286);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// import '../css/reset.css';
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 	  render: function render() {
@@ -119,9 +122,6 @@
 	    );
 	  }
 	});
-	
-	// import '../css/reset.css';
-	
 	
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
@@ -27780,15 +27780,15 @@
 	
 	var _logIn2 = _interopRequireDefault(_logIn);
 	
-	var _project_upload = __webpack_require__(266);
+	var _project_upload = __webpack_require__(267);
 	
 	var _project_upload2 = _interopRequireDefault(_project_upload);
 	
-	var _allProjects = __webpack_require__(267);
+	var _allProjects = __webpack_require__(268);
 	
 	var _allProjects2 = _interopRequireDefault(_allProjects);
 	
-	var _logout = __webpack_require__(268);
+	var _logout = __webpack_require__(269);
 	
 	var _logout2 = _interopRequireDefault(_logout);
 	
@@ -40391,6 +40391,10 @@
 	  value: true
 	});
 	
+	var _page12x = __webpack_require__(266);
+	
+	var _image = _interopRequireWildcard(_page12x);
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -40399,7 +40403,11 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
+	var _reactRouter = __webpack_require__(182);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var LoginPage = _react2.default.createClass({
 	  displayName: 'LoginPage',
@@ -40435,30 +40443,56 @@
 	      'div',
 	      null,
 	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Log In'
+	        'div',
+	        { className: 'header-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'upNext'
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Inspired by creators'
+	          )
+	        )
 	      ),
 	      _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
+	        'div',
+	        { className: 'login-container' },
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'email'
+	          'div',
+	          { 'class': 'thumbnail' },
+	          _react2.default.createElement('img', { src: _image.default })
 	        ),
-	        _react2.default.createElement('input', { type: 'text', placeholder: 'enter your email', ref: function ref(input) {
-	            _this2.email = input;
-	          }, required: true }),
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'Password'
-	        ),
-	        _react2.default.createElement('input', { type: 'password', ref: function ref(input) {
-	            _this2.password = input;
-	          }, required: true }),
-	        _react2.default.createElement('input', { type: 'submit' })
+	          'form',
+	          { className: 'login-form', onSubmit: this.handleSubmit },
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'email', ref: function ref(input) {
+	              _this2.email = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'password', placeholder: 'password', ref: function ref(input) {
+	              _this2.password = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Login'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { 'class': 'message' },
+	            'Not registered? ',
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/signUp' },
+	              'Create an account'
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -40470,11 +40504,21 @@
 /* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "f6d05e4c5e9387502e770dcd8aa72863.png";
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	
+	var _page12x = __webpack_require__(266);
+	
+	var _image = _interopRequireWildcard(_page12x);
 	
 	var _react = __webpack_require__(1);
 	
@@ -40487,6 +40531,8 @@
 	var _reactRouter = __webpack_require__(182);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var UploadProject = _react2.default.createClass({
 	  displayName: 'UploadProject',
@@ -40527,73 +40573,67 @@
 	      null,
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'add-project-wrapper' },
+	        { className: 'header-container' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'upnext-form' },
+	          { className: 'header' },
 	          _react2.default.createElement(
-	            'form',
-	            { onSubmit: this.handleSubmit },
+	            'h1',
+	            null,
+	            'upNext'
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Inspired by creators'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'login-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { 'class': 'thumbnail' },
+	          _react2.default.createElement('img', { src: _image.default })
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'login-form', onSubmit: this.handleSubmit },
+	          _react2.default.createElement('input', { placeholder: 'title', type: 'text', ref: function ref(input) {
+	              _this2.title = input;
+	            }, required: true }),
+	          _react2.default.createElement('textarea', { type: 'textarea', ref: function ref(input) {
+	              _this2.description = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { placeholder: 'your name', type: 'text', ref: function ref(input) {
+	              _this2.name = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { placeholder: 'github link', type: 'text', ref: function ref(input) {
+	              _this2.gitRepo = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { placeholder: 'link to app', type: 'url', ref: function ref(input) {
+	              _this2.url = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { placeholder: 'link to video', type: 'url', ref: function ref(input) {
+	              _this2.videoUrl = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { placeholder: 'link to photo', type: 'url', ref: function ref(input) {
+	              _this2.pictureUrl = input;
+	            }, required: true }),
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Post Project'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { 'class': 'message' },
+	            'Need inspiration? ',
 	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Insert Title of your Project here'
-	            ),
-	            _react2.default.createElement('input', { id: 'f1', type: 'text', ref: function ref(input) {
-	                _this2.title = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Description'
-	            ),
-	            _react2.default.createElement('textarea', { type: 'textarea', ref: function ref(input) {
-	                _this2.description = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Name'
-	            ),
-	            _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                _this2.name = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Github repo'
-	            ),
-	            _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                _this2.gitRepo = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'App URL'
-	            ),
-	            _react2.default.createElement('input', { type: 'url', ref: function ref(input) {
-	                _this2.url = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Video URL'
-	            ),
-	            _react2.default.createElement('input', { type: 'url', ref: function ref(input) {
-	                _this2.videoUrl = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              'Picture Url'
-	            ),
-	            _react2.default.createElement('input', { type: 'url', ref: function ref(input) {
-	                _this2.pictureUrl = input;
-	              }, required: true }),
-	            _react2.default.createElement(
-	              'button',
-	              { type: 'submit' },
-	              'Post Project'
+	              _reactRouter.Link,
+	              { to: '/all-projects' },
+	              'Check out these projects!'
 	            )
 	          )
 	        )
@@ -40605,7 +40645,7 @@
 	exports.default = UploadProject;
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40692,7 +40732,7 @@
 	exports.default = AllProjects;
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40745,7 +40785,7 @@
 	exports.default = Logout;
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40760,7 +40800,7 @@
 	
 	var _reactRouter = __webpack_require__(182);
 	
-	var _signUp = __webpack_require__(270);
+	var _signUp = __webpack_require__(271);
 	
 	var _signUp2 = _interopRequireDefault(_signUp);
 	
@@ -40925,14 +40965,18 @@
 	exports.default = HomePage;
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
+	
+	var _page12x = __webpack_require__(266);
+	
+	var _image = _interopRequireWildcard(_page12x);
 	
 	var _react = __webpack_require__(1);
 	
@@ -40946,154 +40990,140 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	var CreateUser = _react2.default.createClass({
-	    displayName: 'CreateUser',
-	    getInitialState: function getInitialState() {
-	        return {
-	            user: null
-	        };
-	    },
-	    handleSubmit: function handleSubmit(event) {
-	        var _this = this;
+	  displayName: 'CreateUser',
+	  getInitialState: function getInitialState() {
+	    return {
+	      user: null
+	    };
+	  },
+	  handleSubmit: function handleSubmit(event) {
+	    var _this = this;
 	
-	        event.preventDefault();
-	        _jquery2.default.ajax({
-	            url: 'api/user/register',
-	            type: 'POST',
-	            data: {
-	                firstName: this.firstName.value,
-	                lastName: this.lastName.value,
-	                bio: this.bio.value,
-	                email: this.email.value,
-	                linkedin: this.linkedin.value,
-	                imageUrl: this.imageUrl.value,
-	                password: this.password.value,
-	                location: this.location.value,
-	                position: this.position.value
-	            }
-	        }).done(function (data) {
-	            console.log(data);
-	            _this.setState({ user: data });
-	            // this.props.router.push('/profile' + data.id + '?login' + data.id)
-	        }).catch(function (error) {
-	            console.log(error);
-	        });
-	    },
+	    event.preventDefault();
+	    _jquery2.default.ajax({
+	      url: 'api/user/register',
+	      type: 'POST',
+	      data: {
+	        firstName: this.firstName.value,
+	        lastName: this.lastName.value,
+	        bio: this.bio.value,
+	        email: this.email.value,
+	        linkedin: this.linkedin.value,
+	        imageUrl: this.imageUrl.value,
+	        password: this.password.value,
+	        location: this.location.value,
+	        position: this.position.value
+	      }
+	    }).done(function (data) {
+	      console.log(data);
+	      _this.setState({ user: data });
+	      // this.props.router.push('/profile' + data.id + '?login' + data.id)
+	    }).catch(function (error) {
+	      console.log(error);
+	    });
+	  },
 	
-	    render: function render() {
-	        var _this2 = this;
+	  render: function render() {
+	    var _this2 = this;
 	
-	        return _react2.default.createElement(
-	            'div',
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'header-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header' },
+	          _react2.default.createElement(
+	            'h1',
 	            null,
+	            'upNext'
+	          ),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            'Inspired by creators'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'login-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { 'class': 'thumbnail' },
+	          _react2.default.createElement('img', { src: _image.default })
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'login-form', onSubmit: this.handleSubmit },
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'First Name', ref: function ref(input) {
+	              _this2.firstName = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'Last Name', ref: function ref(input) {
+	              _this2.lastName = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'Short Bio', ref: function ref(input) {
+	              _this2.bio = input;
+	            } }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'email', ref: function ref(input) {
+	              _this2.email = input;
+	            }, required: true }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'location', ref: function ref(input) {
+	              _this2.location = input;
+	            } }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'Position', ref: function ref(input) {
+	              _this2.position = input;
+	            } }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'LinkedIn Url', required: true, ref: function ref(input) {
+	              _this2.linkedin = input;
+	            } }),
+	          _react2.default.createElement('input', { type: 'text', placeholder: 'Profile photo url', required: true, ref: function ref(input) {
+	              _this2.imageUrl = input;
+	            } }),
+	          _react2.default.createElement('input', _defineProperty({ type: 'password', placeholder: 'password', required: true, ref: function ref(input) {
+	              _this2.password = input;
+	            } }, 'required', true)),
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Sign Up'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { 'class': 'message' },
+	            'Registered? ',
 	            _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    _react2.default.createElement(
-	                        'form',
-	                        { onSubmit: this.handleSubmit },
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'First Name'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.firstName = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Last Name'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.lastName = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Bio'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.bio = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Your email'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.email = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Location'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.location = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Postition'
-	                        ),
-	                        _react2.default.createElement('input', { type: 'text', ref: function ref(input) {
-	                                _this2.position = input;
-	                            }, required: true }),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'LinkedIn'
-	                        ),
-	                        _react2.default.createElement('input', _defineProperty({ type: 'text', required: true, ref: function ref(input) {
-	                                _this2.linkedin = input;
-	                            } }, 'required', true)),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Image url'
-	                        ),
-	                        _react2.default.createElement('input', _defineProperty({ type: 'text', required: true, ref: function ref(input) {
-	                                _this2.imageUrl = input;
-	                            } }, 'required', true)),
-	                        _react2.default.createElement(
-	                            'span',
-	                            null,
-	                            'Password'
-	                        ),
-	                        _react2.default.createElement('input', _defineProperty({ type: 'password', required: true, ref: function ref(input) {
-	                                _this2.password = input;
-	                            } }, 'required', true)),
-	                        _react2.default.createElement(
-	                            'button',
-	                            { type: 'submit' },
-	                            'Sign Up'
-	                        )
-	                    )
-	                )
+	              _reactRouter.Link,
+	              { to: '/login' },
+	              'Login to your account'
 	            )
-	        );
-	    }
+	          )
+	        )
+	      )
+	    );
+	  }
 	});
 	
 	exports.default = CreateUser;
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(272);
+	var content = __webpack_require__(273);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(274)(content, {});
+	var update = __webpack_require__(275)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -41110,10 +41140,10 @@
 	}
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(273)();
+	exports = module.exports = __webpack_require__(274)();
 	// imports
 	
 	
@@ -41124,7 +41154,7 @@
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports) {
 
 	/*
@@ -41180,7 +41210,7 @@
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -41432,16 +41462,16 @@
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(276);
+	var content = __webpack_require__(277);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(274)(content, {});
+	var update = __webpack_require__(275)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -41458,10 +41488,10 @@
 	}
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(273)();
+	exports = module.exports = __webpack_require__(274)();
 	// imports
 	
 	
@@ -41472,16 +41502,16 @@
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(278);
+	var content = __webpack_require__(279);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(274)(content, {});
+	var update = __webpack_require__(275)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -41498,10 +41528,10 @@
 	}
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(273)();
+	exports = module.exports = __webpack_require__(274)();
 	// imports
 	
 	
@@ -41512,16 +41542,16 @@
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(280);
+	var content = __webpack_require__(281);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(274)(content, {});
+	var update = __webpack_require__(275)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -41538,42 +41568,42 @@
 	}
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(273)();
+	exports = module.exports = __webpack_require__(274)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n    font-family: 'Source Sans Pro', sans-serif;\n    background-color: #f0f1f1;\n    overflow-x: hidden;\n}\n\nh1{\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\np {\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n  margin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n\na {\n  text-decoration: none;\n}\n\n\n.hero-image {\n  background-attachment: fixed;\n  background-image: url(" + __webpack_require__(281) + ");\n  background-size: 100%;\n  background-repeat: no-repeat;\n  position: relative;\n  width: 100%;\n  margin: 0px;\n  padding: -1%;\n  display: flex;\n  padding: 30px 10px 50px 20px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.slogan-wrapper {\n  width: 65%;\n  background-color: transparent;\n  text-align: center;\n  font-size: 52px;\n  margin-top: 8%;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n\n.slogan p {\n  color: white;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.signUp-button {\n  height: 55px;\n  border: 1px solid #027bc3;\n  width: 15%;\n  border-radius: 39px;\n  background-color: #027bc3;\n  white-space: nowrap;\n  align-items: center;\n  display: flex;\n  justify-content: center;\n}\n\na.signUp {\n  font-family: 'Source Sans Pro', sans-serif;\n  text-decoration: none;\n  font-size: 25px;\n  color: #fff;\n}\n\n.slogan-2-wrapper {\n  background-color: transparent;\n  height: 500px;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: -4%;\n}\n\n.slogan-2 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 10%;\n  width: 100%;\n}\n\n.slogan-2-child-1 {\n  width: 82%;\n}\n\n.slogan-2-child-1 p {\n  font-size: 50px;\n  color: #404042;\n  font-weight: bold;\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n\n.slogan-2-child-2 {\n  margin-right: 15%;\n}\n\n.slogan-2-child-2 p {\n  color: #313132;\n  font-weight: lighter;\n}\n\n.bottom-slogan-wrapper {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 5%;\n  width: 100%;\n}\n\n.bottom-slogan {\n  width: 82%;\n  color: white;\n}\n\n.bottom-slogan p {\n  color: #313132;\n  font-size: 50px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.bottom-banner {\n  width: 100%;\n  height: 600px;\n  background-image: url(" + __webpack_require__(282) + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: relative;\n  margin-top: -6%;\n}\n", ""]);
+	exports.push([module.id, "html, body {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n    font-family: 'Source Sans Pro', sans-serif;\n    background-color: #f0f1f1;\n    overflow-x: hidden;\n}\n\nh1{\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\np {\n  text-decoration: none;\n  font-family: 'Source Sans Pro', sans-serif;\n  margin: 0;\n\tpadding: 0;\n\tborder: 0;\n\tfont-size: 100%;\n\tfont: inherit;\n\tvertical-align: baseline;\n}\n\na {\n  text-decoration: none;\n}\n\n\n.hero-image {\n  background-attachment: fixed;\n  background-image: url(" + __webpack_require__(282) + ");\n  background-size: 100%;\n  background-repeat: no-repeat;\n  position: relative;\n  width: 100%;\n  margin: 0px;\n  padding: -1%;\n  display: flex;\n  padding: 30px 10px 50px 20px;\n  flex-direction: column;\n  align-items: center;\n}\n\n.slogan-wrapper {\n  width: 65%;\n  background-color: transparent;\n  text-align: center;\n  font-size: 52px;\n  margin-top: 8%;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n\n.slogan p {\n  color: white;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n\n.signUp-button {\n  height: 55px;\n  border: 1px solid #027bc3;\n  width: 15%;\n  border-radius: 39px;\n  background-color: #027bc3;\n  white-space: nowrap;\n  align-items: center;\n  display: flex;\n  justify-content: center;\n}\n\na.signUp {\n  font-family: 'Source Sans Pro', sans-serif;\n  text-decoration: none;\n  font-size: 25px;\n  color: #fff;\n}\n\n.slogan-2-wrapper {\n  background-color: transparent;\n  height: 500px;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: -4%;\n}\n\n.slogan-2 {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 10%;\n  width: 100%;\n}\n\n.slogan-2-child-1 {\n  width: 82%;\n}\n\n.slogan-2-child-1 p {\n  font-size: 50px;\n  color: #404042;\n  font-weight: bold;\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n\n.slogan-2-child-2 {\n  margin-right: 15%;\n}\n\n.slogan-2-child-2 p {\n  color: #313132;\n  font-weight: lighter;\n}\n\n.bottom-slogan-wrapper {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 5%;\n  width: 100%;\n}\n\n.bottom-slogan {\n  width: 82%;\n  color: white;\n}\n\n.bottom-slogan p {\n  color: #313132;\n  font-size: 50px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.bottom-banner {\n  width: 100%;\n  height: 600px;\n  background-image: url(" + __webpack_require__(283) + ");\n  background-repeat: no-repeat;\n  background-position: center center;\n  position: relative;\n  margin-top: -6%;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "a968e2c57b8a2549198dea8d29074026.png";
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "9fe87dc8679817a156bd0b37eb5f5c78.png";
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(284);
+	var content = __webpack_require__(285);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(274)(content, {});
+	var update = __webpack_require__(275)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -41590,15 +41620,55 @@
 	}
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(273)();
+	exports = module.exports = __webpack_require__(274)();
 	// imports
 	
 	
 	// module
 	exports.push([module.id, ".project-info {\n  display: flex;\n  align-items: center;\n  height: 70%;\n  width: 100%;\n  background-color: transparent;\n  margin-top: 200px;\n  margin: 75px auto;\n  margin-left: 30%;\n}\n\n.project-photo-wrapper {\n  display: flex;\n  width: 200px;\n  height: 200px;\n  border-radius: 100px;\n  overflow: hidden;\n  text-align: center;\n}\n\n.project-photo-wrapper img {\n  width: 100%;\n  height: 100%;\n}\n\n.name-wrapper {\n  margin-left: 20px;\n  text-align: center;\n}\n\n.video-area-wrapper {\n  display: flex;\n  align-items: flex-start;\n  padding-left: 5%;\n  padding-right: 5%;\n  justify-content: center;\n}\n\n.descript-area {\n  height: 1000px;\n  width: 50%;\n  background-color: transparent;\n  margin-left: 50px;\n}\n\n.descript-area p {\n  color: #404042;\n  font-size: 25px;\n  font-family: 'Source Sans Pro', sans-serif;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(287);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(275)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!./form-styles.css", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!./form-styles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(274)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".login-container {\n  position: relative;\n  z-index: 1;\n  background: #ffffff;\n  max-width: 300px;\n  margin: 0 auto 100px;\n  padding: 30px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n  text-align: center;\n}\n\n.login-container input, textarea {\n  outline: 0;\n  background: #f2f2f2;\n  width: 100%;\n  border: 0;\n  margin: 0 0 15px;\n  padding: 15px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n  box-sizing: border-box;\n  font-size: 14px;\n}\n\n.login-container button {\n  outline: 0;\n  background: #027bc3;\n  width: 100%;\n  border: 0;\n  padding: 15px;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n  color: #FFFFFF;\n  font-size: 14px;\n  -webkit-transition: all 0.3 ease;\n  transition: all 0.3 ease;\n  cursor: pointer;\n}\n\n.login-container .message {\n  margin: 15px 0 0;\n  color: #b3b3b3;\n  font-size: 12px;\n}\n.login-container .message a {\n  color: #EF3B3A;\n  text-decoration: none;\n}\n\n.login-container .thumbnail {\n  background: #EF3B3A;\n  width: 150px;\n  height: 150px;\n  margin: 0 auto 30px;\n  padding: 50px 30px;\n  border-top-left-radius: 100%;\n  border-top-right-radius: 100%;\n  border-bottom-left-radius: 100%;\n  border-bottom-right-radius: 100%;\n  box-sizing: border-box;\n}\n.login-container .thumbnail img {\n  display: block;\n  width: 100%;\n}\n\n\n.header-container {\n  position: relative;\n  z-index: 1;\n  max-width: 300px;\n  margin: 0 auto;\n}\n\n.header-container:before, .header-container:after {\n  content: \"\";\n  display: block;\n  clear: both;\n}\n.header-container .header {\n  margin: 50px auto;\n  text-align: center;\n}\n.header-container .header h1 {\n  margin: 0 0 15px;\n  padding: 0;\n  font-size: 36px;\n  font-weight: 300;\n  color: #1a1a1a;\n}\n.header-container .header span {\n  color: #4d4d4d;\n  font-size: 12px;\n}\n.header-container .header span a {\n  color: #000000;\n  text-decoration: none;\n}\n.header-container .header span .fa {\n  color: #EF3B3A;\n}\n", ""]);
 	
 	// exports
 
